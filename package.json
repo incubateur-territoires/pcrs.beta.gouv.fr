@@ -15,8 +15,8 @@
     "scalingo-postbuild": "yarn download-contours && next build && yarn workspaces focus --all --production && yarn cache clean --all"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.577.0",
-    "@aws-sdk/lib-storage": "^3.578.0",
+    "@aws-sdk/client-s3": "^3.864.0",
+    "@aws-sdk/lib-storage": "^3.864.0",
     "@etalab/decoupage-administratif": "^3.1.1",
     "@gouvfr/dsfr": "^1.9.2",
     "@keyv/sqlite": "^4.0.1",
