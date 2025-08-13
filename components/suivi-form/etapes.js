@@ -33,17 +33,15 @@ const Etapes = ({initialValue, etapes, handleEtapes, canBeDisponible}) => {
   }
 
   const addStep = () => {
-    if (startDate) {
-      const currentStepIndex = statusKeys.indexOf(statutInput)
-      const nextStepIndex = statusKeys.indexOf(statutInput) + 1
+    const currentStepIndex = statusKeys.indexOf(statutInput)
+    const nextStepIndex = statusKeys.indexOf(statutInput) + 1
 
-      etapes[currentStepIndex].date_debut = startDate
+    etapes[currentStepIndex].date_debut = startDate
 
-      handleEtapes([...etapes, {statut: statusKeys[nextStepIndex], date_debut: ''}])
+    handleEtapes([...etapes, {statut: statusKeys[nextStepIndex], date_debut: ''}])
 
-      setStatutInput(statusKeys[nextStepIndex])
-      setStartDate('')
-    }
+    setStatutInput(statusKeys[nextStepIndex])
+    setStartDate('')
   }
 
   const onDelete = (etape, index) => {
@@ -99,17 +97,18 @@ const Etapes = ({initialValue, etapes, handleEtapes, canBeDisponible}) => {
       )
       )}
 
-      {(startDate && etapes.length < statusKeys.length) && (
-        <Button
-          label='Ajouter une étape'
-          icon='add-circle-fill'
-          iconSide='left'
-          disabled={!canBeDisponible && etapes.at(-1).statut === 'realise'}
-          onClick={addStep}
-        >
-          Ajouter l’étape suivante
-        </Button>
-      )}
+      <Button
+        label='Ajouter une étape'
+        icon='add-circle-fill'
+        iconSide='left'
+        disabled={
+          (!canBeDisponible && etapes.at(-1).statut === 'realise')
+            || etapes.at(-1).statut === 'obsolete'
+        }
+        onClick={addStep}
+      >
+        Ajouter l’étape suivante
+      </Button>
 
       <style jsx>{`
         .delete-button {
