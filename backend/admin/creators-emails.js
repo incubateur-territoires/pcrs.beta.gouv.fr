@@ -54,7 +54,7 @@ export async function updateCreator(creatorId, update) {
   mongo.decorateUpdate(changes)
 
   try {
-    const {value} = await mongo.db.collection('creators-emails').findOneAndUpdate(
+    const value = await mongo.db.collection('creators-emails').findOneAndUpdate(
       {_id: creatorId},
       {$set: {...changes}},
       {returnDocument: 'after'}

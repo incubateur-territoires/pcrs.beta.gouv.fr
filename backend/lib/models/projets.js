@@ -166,8 +166,8 @@ export async function updateProjet(id, payload) {
   }
 
   try {
-    const {value} = await mongo.db.collection('projets').findOneAndUpdate(
-      {_id: mongo.parseObjectId(id), _deleted: {$exists: false}},
+    const value = await mongo.db.collection('projets').findOneAndUpdate(
+      {_id: id, _deleted: {$exists: false}},
       {$set: projet},
       {returnDocument: 'after'}
     )

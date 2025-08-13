@@ -64,7 +64,7 @@ export async function updateAdministrator(adminId, update) {
   mongo.decorateUpdate(changes)
 
   try {
-    const {value} = await mongo.db.collection('administrators').findOneAndUpdate(
+    const value = await mongo.db.collection('administrators').findOneAndUpdate(
       {_id: adminId},
       {$set: {...changes}},
       {returnDocument: 'after'}
