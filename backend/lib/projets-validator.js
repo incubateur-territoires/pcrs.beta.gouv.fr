@@ -279,7 +279,7 @@ const schemaCreation = Joi.object({
     'any.required': 'La clé "perimetres" est obligatoire',
     'any.custom': 'Le territoire n’est pas valide'
   }),
-  etapes: Joi.array().items(etapesSchemaCreation).custom(validateEtapesDates).required().messages({
+  etapes: Joi.array().items(etapesSchemaCreation).required().messages({
     'array.base': 'Les étapes doivent être dans un tableau',
     'any.required': 'La clé "etapes" est obligatoire'
   }),
@@ -517,7 +517,7 @@ const schemaUpdate = Joi.object({
     'array.base': 'Les périmètres doivent être dans un tableau',
     'any.custom': 'Le territoire n’est pas valide'
   }),
-  etapes: Joi.array().items(etapesSchemaUpdate).custom(validateEtapesDates).messages({
+  etapes: Joi.array().items(etapesSchemaUpdate).messages({
     'array.base': 'Les étapes doivent être dans un tableau'
   }),
   subventions: Joi.array().items(subventionsSchemaUpdate).allow(null).messages({
