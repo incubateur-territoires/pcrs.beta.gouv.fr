@@ -883,10 +883,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gouvfr/dsfr@npm:^1.9.2":
-  version: 1.13.0
-  resolution: "@gouvfr/dsfr@npm:1.13.0"
-  checksum: 10c0/e724519dab335c567da170a6364228b4832ddec395289fdc66824561823f73f1e0ca8b99ad6d411bc83799778d8643fe1a0a5a366894702d83cc90f50cb1e9f5
+"@gouvfr/dsfr@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "@gouvfr/dsfr@npm:1.14.0"
+  checksum: 10c0/3dde12e684c309a1e99713b8f1fa16d775fdcf1a51114d53d3208c37abbbc5780700345ac6e89a3460ed1be3781ba8d3263dbcb0171902e92d4117672d704420
   languageName: node
   linkType: hard
 
@@ -8184,7 +8184,7 @@ __metadata:
     "@aws-sdk/client-s3": "npm:^3.864.0"
     "@aws-sdk/lib-storage": "npm:^3.864.0"
     "@etalab/decoupage-administratif": "npm:^3.1.1"
-    "@gouvfr/dsfr": "npm:^1.9.2"
+    "@gouvfr/dsfr": "npm:^1.14.0"
     "@keyv/sqlite": "npm:^4.0.1"
     "@next/bundle-analyzer": "npm:^13.5.8"
     "@socialgouv/matomo-next": "npm:^1.9.2"
