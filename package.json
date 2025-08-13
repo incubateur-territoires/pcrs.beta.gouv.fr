@@ -34,7 +34,7 @@
     "keyv": "^5.2.3",
     "lodash-es": "^4.17.21",
     "lru-cache": "^11.0.2",
-    "maplibre-gl": "^3.5.1",
+    "maplibre-gl": "^3.6.2",
     "mongodb": "~6.16.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",

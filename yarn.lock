@@ -6978,7 +6978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"maplibre-gl@npm:^3.5.1":
+"maplibre-gl@npm:^3.6.2":
   version: 3.6.2
   resolution: "maplibre-gl@npm:3.6.2"
   dependencies:
@@ -8220,7 +8220,7 @@ __metadata:
     keyv: "npm:^5.2.3"
     lodash-es: "npm:^4.17.21"
     lru-cache: "npm:^11.0.2"
-    maplibre-gl: "npm:^3.5.1"
+    maplibre-gl: "npm:^3.6.2"
     mongodb: "npm:~6.16.0"
     mongodb-memory-server: "npm:^10.2.0"
     morgan: "npm:^1.10.0"
