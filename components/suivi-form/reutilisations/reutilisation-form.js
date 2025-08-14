@@ -73,7 +73,7 @@ const ReutilisationForm = ({initialValues, isReutilisationExists, editCode, proj
       setMessage(data.message)
     }
 
-    setImageURL(data.imageURL)
+    setImageURL(data?.imageURL?.replaceAll(S3_URL, ''))
     setImageKey(data.imageKey)
     setIsUploading(false)
   }
