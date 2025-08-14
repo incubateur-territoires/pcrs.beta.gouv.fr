@@ -1,12 +1,15 @@
 import {useState} from 'react'
 import PropTypes from 'prop-types'
 import Image from 'next/image'
+import {s3ImageUrl} from 'utils/s3-image-url'
 import {useInput} from '@/hooks/input.js'
 
 import colors from '@/styles/colors.js'
 
 import TextInput from '@/components/text-input.js'
 import Button from '@/components/button.js'
+
+const S3_URL = process.env.NEXT_PUBLIC_IMAGES_DOMAIN
 
 const ReutilisationForm = ({initialValues, isReutilisationExists, editCode, projectId, onSubmit, onCancel}) => {
   const [file, setFile] = useState(null)
@@ -73,7 +76,7 @@ const ReutilisationForm = ({initialValues, isReutilisationExists, editCode, proj
       setMessage(data.message)
     }
 
-    setImageURL(data.imageURL)
+    setImageURL(data?.imageURL?.replaceAll(S3_URL, ''))
     setImageKey(data.imageKey)
     setIsUploading(false)
   }
@@ -169,7 +172,7 @@ const ReutilisationForm = ({initialValues, isReutilisationExists, editCode, proj
             <div className='fr-col-12 fr-col-md-4'>
               <Image
                 className='fr-responsive-img'
-                src={imageURL}
+                src={s3ImageUrl(imageURL)}
                 alt={'Illustration de ' + titre}
                 height={250}
                 width={500}

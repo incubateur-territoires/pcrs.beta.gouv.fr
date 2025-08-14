@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import Image from 'next/image'
+import {s3ImageUrl} from 'utils/s3-image-url'
 
 const Reutilisations = ({reutilisations}) => (
   <>
@@ -35,7 +36,11 @@ const Reutilisations = ({reutilisations}) => (
                   <div className='fr-card__img'>
                     <Image
                       className='fr-responsive-img'
-                      src={reutilisation.imageURL ?? '/images/illustrations/blog_fallback.svg'}
+                      src={
+                        reutilisation.imageURL
+                          ? s3ImageUrl(reutilisation.imageURL)
+                          : '/images/illustrations/blog_fallback.svg'
+                      }
                       alt={'Illustration de ' + reutilisation.titre}
                       height={250}
                       width={500}
