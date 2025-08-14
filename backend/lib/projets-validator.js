@@ -233,9 +233,8 @@ const reutilisationsSchemaCreation = Joi.object({
   imageKey: Joi.string().allow(null).messages({
     'string.base': 'La clé de l’image doit être une chaine de caractères'
   }),
-  imageURL: Joi.string().uri().allow(null).messages({
-    'string.base': 'L’URL de l’image doit être une chaine de caractères',
-    'string.uri': 'L’URL de l’image n’est pas valide'
+  imageURL: Joi.string().allow(null).messages({
+    'string.base': 'L’URL de l’image doit être une chaine de caractères'
   })
 })
 
@@ -475,9 +474,8 @@ const reutilisationsSchemaUpdate = Joi.object().keys({
   imageKey: Joi.string().allow(null).messages({
     'string.base': 'La clé de l’image doit être une chaine de caractères'
   }),
-  imageURL: Joi.string().uri().allow(null).messages({
-    'string.base': 'L’URL de l’image doit être une chaine de caractères',
-    'string.uri': 'L’URL de l’image n’est pas valide'
+  imageURL: Joi.string().allow(null).messages({
+    'string.base': 'L’URL de l’image doit être une chaine de caractères'
   })
 }).messages({
   'object.unknown': 'Une clé de l’objet est invalide'
