@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import Image from 'next/image'
 
+import {s3ImageUrl} from '../../../utils/s3-image-url.js'
+
 import colors from '@/styles/colors.js'
 
 const ReutilisationCard = ({titre, lien, description, imageURL, isDisabled, handleDelete, handleEdition}) => (
@@ -23,7 +25,7 @@ const ReutilisationCard = ({titre, lien, description, imageURL, isDisabled, hand
           {imageURL ? (
             <Image
               className='fr-responsive-img'
-              src={imageURL ?? '/images/illustrations/blog_fallback.svg'}
+              src={imageURL ? s3ImageUrl(imageURL) : '/images/illustrations/blog_fallback.svg'}
               alt={'Illustration de ' + titre}
               height={250}
               width={500}
