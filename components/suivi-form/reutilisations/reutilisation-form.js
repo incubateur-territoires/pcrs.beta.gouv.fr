@@ -110,7 +110,14 @@ const ReutilisationForm = ({initialValues, isReutilisationExists, editCode, proj
   }
 
   return (
-    <>
+    <div
+      style={{
+        width: '100%',
+        border: '1px solid lightgrey',
+        padding: '1em 2em 2em 2em',
+        borderRadius: '4px'
+      }}
+    >
       <div className='fr-grid-row fr-my-5w'>
         <div className='fr-col-12 fr-col-md-6 fr-pr-md-3w'>
           <TextInput
@@ -219,7 +226,7 @@ const ReutilisationForm = ({initialValues, isReutilisationExists, editCode, proj
           isDisabled={!isFormComplete || isUploading}
           onClick={handleSubmit}
         >
-          Valider
+          Valider l’ajout de la réutilisation
         </Button>
         <div className='fr-pl-3w'>
           <Button
@@ -244,7 +251,7 @@ const ReutilisationForm = ({initialValues, isReutilisationExists, editCode, proj
           align-items: center;
         }
       `}</style>
-    </>
+    </div>
   )
 }
 

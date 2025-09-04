@@ -7,7 +7,6 @@ import {STATUS} from '@/lib/utils/projet.js'
 import {useInput} from '@/hooks/input.js'
 
 import DateInput from '@/components/date-input.js'
-import TextInput from '@/components/text-input.js'
 import Button from '@/components/button.js'
 
 const Etapes = ({initialValue, etapes, handleEtapes, canBeDisponible}) => {
@@ -58,23 +57,10 @@ const Etapes = ({initialValue, etapes, handleEtapes, canBeDisponible}) => {
       {etapes.map((etape, index) => (
         <div key={etape.statut} className='fr-grid-row fr-my-5w'>
           <div className='fr-grid-row fr-col-11'>
-            <div className='fr-col-12 fr-col-md-6'>
-              <TextInput
-                isRequired
-                isDisabled
-                id={etape.statut}
-                label='Statut'
-                ariaLabel='statut du projet'
-                description='Statut du projet'
-                value={STATUS[etape.statut].label}
-              />
-            </div>
-
-            <div className='fr-col-12 fr-mt-3w fr-mt-md-0 fr-col-md-6 fr-pl-md-3w'>
+            <div className='fr-col-12 fr-mt-3w fr-mt-md-0'>
               <DateInput
-                isRequired
                 name={etape.statut}
-                label='Date de début'
+                label={<b>Date de début - <i>{STATUS[etape.statut].label}</i></b>}
                 ariaLabel='date de commencement du statut'
                 description='Date de début du statut'
                 value={etape.statut === statutInput ? startDate : etape.date_debut || ''}

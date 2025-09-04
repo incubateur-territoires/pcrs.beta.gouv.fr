@@ -183,7 +183,6 @@ test('Joi/validateJoiDate : not valid', t => {
   const notValidDates = [
     1,
     true,
-    0,
     '2020',
     'foo',
     '2020-40-40',

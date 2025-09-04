@@ -118,7 +118,14 @@ const PerimetreForm = ({perimetres, onCancel, onSubmit}) => {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        width: '100%',
+        border: '1px solid lightgrey',
+        padding: '0 2em',
+        borderRadius: '4px'
+      }}
+    >
       <div className='fr-grid-row fr-my-5w'>
         <div className='fr-col-12 fr-col-md-6 fr-mb-3w'>
           <SelectInput
@@ -158,7 +165,7 @@ const PerimetreForm = ({perimetres, onCancel, onSubmit}) => {
             isDisabled={!isFormCompleted || errorMessage}
             onClick={handleSubmit}
           >
-            Ajouter
+            Valider l’ajout du périmètre
           </Button>
 
           {onCancel && (

@@ -18,7 +18,11 @@ function validatePerimetre(perimetre) {
 }
 
 export function validateJoiDate(date, helpers) {
-  if (!date || typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+  if (!date || date === '') {
+    return null
+  }
+
+  if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     return helpers.message('Date invalide')
   }
 

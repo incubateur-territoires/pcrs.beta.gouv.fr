@@ -175,7 +175,16 @@ const LivrableForm = ({initialValues, isLivrableNameAvailable, onCancel, onSubmi
   }
 
   return (
-    <div ref={livrableFormRef} className='fr-mt-4w' style={{width: '100%'}}>
+    <div
+      ref={livrableFormRef}
+      className='fr-mt-4w'
+      style={{
+        width: '100%',
+        border: '1px solid lightgrey',
+        padding: '2em',
+        borderRadius: '4px'
+      }}
+    >
       <div className='fr-grid-row fr-grid-row--gutters'>
         {/* Nom du livrable */}
         <div className='fr-col-12 fr-col-lg-8'>
@@ -382,7 +391,7 @@ const LivrableForm = ({initialValues, isLivrableNameAvailable, onCancel, onSubmi
           isDisabled={!form.isFormValid}
           onClick={handleSubmit}
         >
-          Valider
+          Valider l’ajout du livrable
         </Button>
 
         {onCancel && (

@@ -136,9 +136,17 @@ const ActeurForm = ({initialValues, isSirenAlreadyUsed, isAplcDisabled, onCancel
   }
 
   return (
-    <div className='fr-mt-4w'>
+    <div
+      className='fr-mt-4w'
+      style={{
+        width: '100%',
+        border: '1px solid lightgrey',
+        padding: '2em',
+        borderRadius: '4px'
+      }}
+    >
       <div className='fr-grid-row'>
-        <div className='fr-col-12 fr-mt-6w fr-col-md-6'>
+        <div className='fr-col-12 fr-mt-2w fr-col-md-6'>
           <ActorsAutocompleteInput
             isRequired
             inputValue={form.fields.nom.value}
@@ -244,7 +252,7 @@ const ActeurForm = ({initialValues, isSirenAlreadyUsed, isAplcDisabled, onCancel
           isDisabled={!form.isFormValid}
           onClick={handleSubmit}
         >
-          Valider
+          Valider l’ajout de l’acteur
         </Button>
         {onCancel && (
           <div className='fr-pl-3w'>
