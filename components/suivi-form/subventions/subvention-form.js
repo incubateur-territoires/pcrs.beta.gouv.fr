@@ -45,7 +45,14 @@ const SubventionForm = ({initialValues, isSubventionExisting, onSubmit, onCancel
   }
 
   return (
-    <div>
+    <div
+      style={{
+        width: '100%',
+        border: '1px solid lightgrey',
+        padding: '0 2em 1em 2em',
+        borderRadius: '4px'
+      }}
+    >
       <div className='fr-grid-row fr-my-5w'>
         <div className='fr-grid-row fr-col-12 fr-pr-3w'>
           <div className='fr-col-12 fr-col-md-6'>
@@ -106,7 +113,7 @@ const SubventionForm = ({initialValues, isSubventionExisting, onSubmit, onCancel
           isDisabled={!isFormCompleted || errorMessage}
           onClick={handleSubmit}
         >
-          Valider
+          Valider l’ajout de la subvention
         </Button>
         <div className='fr-pl-3w'>
           <Button
