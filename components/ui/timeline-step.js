@@ -11,7 +11,9 @@ const TimelineStep = ({step, status, isCurrentStep, isLastStep}) => {
         {status.label}
       </div>
 
-      {step?.date_debut && <div className='start-date fr-text--sm fr-mb-0'>Depuis le {step.date_debut}</div>}
+      {step?.date_debut
+        ? <div className='start-date fr-text--sm fr-mb-0'>Depuis le {step.date_debut}</div>
+        : <div className='start-date fr-text--sm fr-mb-0'>Date de début non renseignée</div>}
 
       <style jsx>{`
         .futur-label {
