@@ -7,7 +7,6 @@ import {STATUS} from '@/lib/utils/projet.js'
 import {useInput} from '@/hooks/input.js'
 
 import DateInput from '@/components/date-input.js'
-import TextInput from '@/components/text-input.js'
 import Button from '@/components/button.js'
 
 const Etapes = ({initialValue, etapes, handleEtapes, canBeDisponible}) => {
