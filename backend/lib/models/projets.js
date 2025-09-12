@@ -54,13 +54,13 @@ function computeEditorKey() {
 }
 
 export async function renewEditorKey(projet) {
-  const {value} = await mongo.db.collection('projets').findOneAndUpdate(
+  const value = await mongo.db.collection('projets').findOneAndUpdate(
     {_id: projet._id},
     {$set: {editorKey: computeEditorKey()}},
     {returnDocument: 'after'}
   )
 
-  console.log('Le ' + new Date() + ' | Remplacement du jeton d’édition du projet ' + projet.nom + ', _id: ' + projet._id + ' | Ancien jeton : ' + projet.editorKey + ' | Nouveau jeton : ' + projet.editorKey)
+  console.log('Le ' + new Date() + ' | Remplacement du jeton d’édition du projet ' + projet.nom + ', _id: ' + projet._id + ' | Ancien jeton : ' + projet.editorKey + ' | Nouveau jeton : ' + value.editorKey)
 
   return value
 }
