@@ -70,7 +70,8 @@ export const livrableRenderItem = livrable => {
     {title: 'Licence', value: LICENCES[livrable.licence].label, defaultText: 'Non renseignée'},
     {title: 'Stockage', value: livrable?.stockage?.toUpperCase(), defaultText: 'Non renseigné'},
     {title: 'Date livraison', value: livrable?.date_livraison ? `le ${formatDate(livrable.date_livraison)}` : null, defaultText: 'Non renseignée'},
-    {title: 'Diffusion', value: diffLink, defaultText: 'Non renseignée'}
+    {title: 'Diffusion', value: diffLink, defaultText: 'Non renseignée'},
+    {title: 'Ressource', value: livrable?.diffusion_layer || null, defaultText: 'Non renseignée'}
   ]
   return renderItem(rows)
 }
