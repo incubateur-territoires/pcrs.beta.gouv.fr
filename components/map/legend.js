@@ -5,7 +5,7 @@ import {STATUS, NATURES, REGIMES} from '@/lib/utils/projet.js'
 
 import Badge from '@/components/badge.js'
 
-const Legend = ({isMobile, legend}) => {
+const Legend = ({isMobile = false, legend = 'project-fills'}) => {
   const [isOpen, setIsOpen] = useState(!isMobile)
 
   return (
@@ -80,11 +80,6 @@ const Legend = ({isMobile, legend}) => {
       )}
     </div>
   )
-}
-
-Legend.defaultProps = {
-  isMobile: true,
-  legend: 'projets-fills'
 }
 
 Legend.propTypes = {

@@ -1,7 +1,7 @@
 import {useState, useMemo} from 'react'
 import PropTypes from 'prop-types'
 
-const ListSlicer = ({list, max, itemId, renderListItem}) => {
+const ListSlicer = ({list = [], max = 5, itemId, renderListItem = () => {}}) => {
   const [listSize, setListSize] = useState(max)
 
   const truncatedList = useMemo(() => list.slice(0, listSize), [list, listSize])
@@ -54,11 +54,6 @@ ListSlicer.propTypes = {
   max: PropTypes.number,
   itemId: PropTypes.string.isRequired,
   renderListItem: PropTypes.func
-}
-
-ListSlicer.defaultProps = {
-  list: [],
-  max: 5
 }
 
 export default ListSlicer

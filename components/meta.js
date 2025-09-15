@@ -4,7 +4,12 @@ import prune from 'underscore.string/prune'
 
 const SITE_NAME = 'pcrs.beta.gouv.fr'
 
-const Meta = ({title, description, type, image}) => {
+const Meta = ({
+  title = null,
+  description,
+  type = 'website',
+  image = null
+}) => {
   description = prune(description, 160, '…')
 
   return (
@@ -34,12 +39,6 @@ Meta.propTypes = {
     'article'
   ]),
   image: PropTypes.string
-}
-
-Meta.defaultProps = {
-  title: null,
-  type: 'website',
-  image: null
 }
 
 export default Meta

@@ -15,7 +15,7 @@ import Legend from '@/components/map/legend.js'
 import MapToolBox from '@/components/map/map-tool-box.js'
 import AutocompleteInput from '@/components/autocomplete-input.js'
 
-const Map = ({isMobile, geometry, projetId, handleNewProject, handleSelectProjets}) => {
+const Map = ({isMobile = false, geometry, projetId = null, handleNewProject, handleSelectProjets}) => {
   const [layout, setLayout] = useState('projets-fills')
   const [acteurSearchInput, setActeurSearchInput] = useState('')
   const [foundActeurs, setFoundActeurs] = useState([])
@@ -287,10 +287,6 @@ const Map = ({isMobile, geometry, projetId, handleNewProject, handleSelectProjet
       </button>
     </div>
   )
-}
-
-Map.defaultProps = {
-  isMobile: false
 }
 
 Map.propTypes = {

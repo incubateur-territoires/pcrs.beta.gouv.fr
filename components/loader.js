@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 import colors from '@/styles/colors.js'
 
-const Loader = ({type, size, speed}) => {
+const Loader = ({type = 'spinner', size = 'regular', speed = 2}) => {
   if (type === 'spinner') {
     return (
       <div className='spinner'>
@@ -70,12 +70,6 @@ Loader.propTypes = {
     'regular'
   ]),
   speed: PropTypes.number
-}
-
-Loader.defaultProps = {
-  type: 'spinner',
-  size: 'regular',
-  speed: 2
 }
 
 export default Loader

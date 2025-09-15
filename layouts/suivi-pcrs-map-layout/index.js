@@ -8,8 +8,8 @@ import DeviceContext from '@/contexts/device.js'
 import Map from '@/components/map/index.js'
 import MapSidebar from '@/components/map-sidebar/index.js'
 
-const SuiviPCRSMapLayout = props => {
-  const {projet, projets, onProjetChange, resetProjet, setIsOpen, handleNewProject, selectProjets, geometry} = props
+const SuiviPCRSMapLayout = ({...props}) => {
+  const {projet = null, projets, onProjetChange, resetProjet, setIsOpen, handleNewProject, selectProjets, geometry} = props
   const {isMobileDevice} = useContext(DeviceContext)
 
   const Layout = useMemo(() => isMobileDevice ? Mobile : Desktop, [isMobileDevice])
@@ -41,10 +41,6 @@ const SuiviPCRSMapLayout = props => {
       map={map}
     />
   )
-}
-
-SuiviPCRSMapLayout.defaultProps = {
-  projet: null
 }
 
 SuiviPCRSMapLayout.propTypes = {

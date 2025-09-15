@@ -4,7 +4,7 @@ import OpenDataMessage from '@/components/ui/open-data-message.js'
 const SIDEBAR_WIDTH = 460
 const HEADER_HEIGHT = 117
 
-const Desktop = ({projet, isOpen, setIsOpen, sidebar, map}) => {
+const Desktop = ({projet = null, isOpen, setIsOpen = () => {}, sidebar = null, map}) => {
   const sidebarWidth = isOpen ? `${SIDEBAR_WIDTH}px` : '5px'
   return (
     <div className='desktop-layout-container'>
@@ -30,7 +30,7 @@ const Desktop = ({projet, isOpen, setIsOpen, sidebar, map}) => {
           display: flex;
           height: 100%;
         }
-  
+
         .desktop-sidebar-container {
           min-width: ${sidebarWidth};
           max-width: ${SIDEBAR_WIDTH}px;
@@ -38,7 +38,7 @@ const Desktop = ({projet, isOpen, setIsOpen, sidebar, map}) => {
           height: calc(100vh - ${HEADER_HEIGHT}px);
           overflow-x: hidden;
         }
-  
+
         .sidebar-toggle-button {
           position: absolute;
           top: 45px;
@@ -54,7 +54,7 @@ const Desktop = ({projet, isOpen, setIsOpen, sidebar, map}) => {
           box-shadow: 2px 2px 5px grey;
           z-index: 3;
         }
-  
+
         .map-container {
           display: flex;
           flex-direction: column;
@@ -63,10 +63,6 @@ const Desktop = ({projet, isOpen, setIsOpen, sidebar, map}) => {
       `}</style>
     </div>
   )
-}
-
-Desktop.defaultProps = {
-  projet: null
 }
 
 Desktop.propTypes = {

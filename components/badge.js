@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Badge = ({background, textColor, size, children, ...props}) => (
+const Badge = ({background = null, textColor = null, size = 'regular', children = null, ...props}) => (
   <div className='badge fr-mr-1w fr-mb-1w' {...props}>
     <p className={`fr-badge badge-color ${size === 'small' ? 'fr-badge--sm' : ''}`}>
       {children}
@@ -23,11 +23,6 @@ Badge.propTypes = {
     'regular'
   ]),
   children: PropTypes.node
-}
-
-Badge.defaultProps = {
-  size: 'regular',
-  children: null
 }
 
 export default Badge
