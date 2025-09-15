@@ -14,7 +14,18 @@ import SelectInput from '@/components/select-input.js'
 import Button from '@/components/button.js'
 import {stripNonNumericCharacters, formatInternationalPhone} from '@/lib/string.js'
 
-const initState = ({initialValues, fieldsValidations}) => {
+const initState = ({
+  initialValues = {
+    nom: '',
+    siren: '',
+    phone: '',
+    mail: '',
+    finPerc: '',
+    finEuros: '',
+    role: ''
+  },
+  fieldsValidations
+}) => {
   const fields = {
     nom: {
       value: initialValues.nom || '',
@@ -284,18 +295,6 @@ ActeurForm.propTypes = {
   isSirenAlreadyUsed: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   onSubmit: PropTypes.func.isRequired
-}
-
-ActeurForm.defaultProps = {
-  initialValues: {
-    nom: '',
-    siren: '',
-    phone: '',
-    mail: '',
-    finPerc: '',
-    finEuros: '',
-    role: ''
-  }
 }
 
 export default ActeurForm

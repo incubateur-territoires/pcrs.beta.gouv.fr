@@ -4,20 +4,20 @@ import {handleRangeError} from './suivi-form/acteurs/utils/error-handlers.js'
 import {stripNonNumericCharacters} from '@/lib/string.js'
 
 const NumberInput = ({
-  label,
-  value,
-  min,
-  max,
-  ariaLabel,
-  placeholder,
-  errorMessage,
-  description,
-  isRequired,
-  isDisabled,
-  onValueChange,
-  setIsValueValid,
-  onFocus,
-  onBlur,
+  label = '',
+  value = '',
+  min = null,
+  max = null,
+  ariaLabel = '',
+  placeholder = null,
+  errorMessage = null,
+  description = null,
+  isRequired = false,
+  isDisabled = false,
+  onValueChange = () => {},
+  setIsValueValid = () => {},
+  onFocus = null,
+  onBlur = null,
   ...props
 }) => {
   const [inputError, setInputError] = useState(errorMessage)
@@ -91,20 +91,6 @@ NumberInput.propTypes = {
   setIsValueValid: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func
-}
-
-NumberInput.defaultProps = {
-  label: '',
-  value: '',
-  ariaLabel: '',
-  placeholder: null,
-  errorMessage: null,
-  description: null,
-  isRequired: false,
-  isDisabled: false,
-  onFocus: null,
-  onBlur: null,
-  setIsValueValid() {}
 }
 
 export default NumberInput

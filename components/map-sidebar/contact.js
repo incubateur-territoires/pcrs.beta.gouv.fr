@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 import colors from '@/styles/colors.js'
 
-const Contact = ({name, phone, mail}) => (
+const Contact = ({name = null, phone = null, mail = null}) => (
   <div className='contact fr-container fr-pl-0 fr-ml-0'>
     <div className='contact-info fr-grid-row'>
       <span aria-disabled className='fr-icon-user-fill fr-col-1 fr-mr-1w' aria-hidden='true' />
@@ -47,12 +47,6 @@ const Contact = ({name, phone, mail}) => (
     `}</style>
   </div>
 )
-
-Contact.defaultProps = {
-  name: null,
-  phone: null,
-  mail: null
-}
 
 Contact.propTypes = {
   name: PropTypes.string,

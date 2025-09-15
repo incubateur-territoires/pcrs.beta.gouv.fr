@@ -24,21 +24,21 @@ import Button from '@/components/button.js'
 import BackToProjectButton from '@/components/ui/back-to-project-button.js'
 
 const SuiviForm = ({
-  nom,
-  nature,
-  regime,
-  budget,
-  livrables,
-  acteurs,
-  perimetres,
-  etapes,
-  subventions,
-  reutilisations,
-  metaPerimetreMillesime,
-  _id,
-  token,
-  userRole,
-  projectEditCode,
+  nom = '',
+  nature = '',
+  regime = '',
+  budget = null,
+  livrables = [],
+  acteurs = [],
+  perimetres = [],
+  etapes = [{statut: 'investigation', date_debut: ''}], // eslint-disable-line camelcase
+  subventions = [],
+  reutilisations = [],
+  metaPerimetreMillesime = null,
+  _id = null,
+  token = null,
+  userRole = null,
+  projectEditCode = null,
   isTokenRecovering
 }) => {
   const router = useRouter()
@@ -405,23 +405,6 @@ SuiviForm.propTypes = {
   projectEditCode: PropTypes.string,
   metaPerimetreMillesime: PropTypes.string,
   isTokenRecovering: PropTypes.bool.isRequired
-}
-
-SuiviForm.defaultProps = {
-  userRole: null,
-  nom: '',
-  nature: '',
-  regime: '',
-  budget: null,
-  livrables: [],
-  acteurs: [],
-  perimetres: [],
-  etapes: [{statut: 'investigation', date_debut: ''}], // eslint-disable-line camelcase
-  subventions: [],
-  _id: null,
-  projectEditCode: null,
-  metaPerimetreMillesime: null,
-  token: null
 }
 
 export default SuiviForm

@@ -10,7 +10,7 @@ import Button from '@/components/button.js'
 
 const API_URL = process.env.NEXT_PUBLIC_URL || 'https://pcrs.beta.gouv.fr'
 
-const MapSidebar = ({projet, onClose, onProjetChange, projets, resetProjet}) => {
+const MapSidebar = ({projet, onClose, onProjetChange = null, projets = null, resetProjet}) => {
   const router = useRouter()
 
   const {
@@ -92,11 +92,6 @@ const MapSidebar = ({projet, onClose, onProjetChange, projets, resetProjet}) => 
       `}</style>
     </>
   )
-}
-
-MapSidebar.defaultProps = {
-  projets: null,
-  onProjetChange: null
 }
 
 MapSidebar.propTypes = {

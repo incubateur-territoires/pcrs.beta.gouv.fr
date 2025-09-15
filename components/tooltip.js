@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import PropTypes from 'prop-types'
 
-const Tooltip = ({tooltipContent, tooltipStyle, position, children}) => {
+const Tooltip = ({tooltipContent, tooltipStyle = 'primary', position = 'right', children = null}) => {
   const [isScreenPress, setIsScreenPress] = useState(false)
 
   return (
@@ -64,12 +64,6 @@ Tooltip.propTypes = {
     'secondary'
   ]),
   children: PropTypes.node
-}
-
-Tooltip.defaultProps = {
-  children: null,
-  position: 'right',
-  tooltipStyle: 'primary'
 }
 
 export default Tooltip

@@ -9,7 +9,7 @@ import {useInput} from '@/hooks/input.js'
 import DateInput from '@/components/date-input.js'
 import Button from '@/components/button.js'
 
-const Etapes = ({initialValue, etapes, handleEtapes, canBeDisponible}) => {
+const Etapes = ({initialValue, etapes, handleEtapes, canBeDisponible = false}) => {
   const {statut, date_debut} = initialValue
 
   const [statutInput, setStatutInput] = useInput({initialValue: statut})

@@ -11,7 +11,7 @@ import colors from '@/styles/colors.js'
 import Button from '@/components/button.js'
 import Modal from '@/components/modal.js'
 
-const DeleteModal = ({nom, id, authorizationCode, isSidebar, handleDeleteModalOpen}) => {
+const DeleteModal = ({nom, id, authorizationCode, isSidebar = false, handleDeleteModalOpen}) => {
   const router = useRouter()
 
   const [validationMessage, setValidationMessage] = useState(null)
@@ -94,10 +94,6 @@ DeleteModal.propTypes = {
   authorizationCode: PropTypes.string.isRequired,
   handleDeleteModalOpen: PropTypes.func.isRequired,
   isSidebar: PropTypes.bool
-}
-
-DeleteModal.defaultProps = {
-  isSidebar: false
 }
 
 export default DeleteModal

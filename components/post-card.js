@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import {shortDate} from '@/lib/date-utils.js'
 
-const PostCard = ({post, isTestimony}) => {
+const PostCard = ({post, isTestimony = false}) => {
   const sanitizedDescription = post.excerpt.split(' ').slice(0, 25).join(' ') + '...'
   const postHref = isTestimony ? `/temoignages/${post.slug}` : `/blog/${post.slug}`
 
@@ -67,10 +67,6 @@ const PostCard = ({post, isTestimony}) => {
 PostCard.propTypes = {
   post: PropTypes.object.isRequired,
   isTestimony: PropTypes.bool
-}
-
-PostCard.defaultProps = {
-  isTestimony: false
 }
 
 export default PostCard

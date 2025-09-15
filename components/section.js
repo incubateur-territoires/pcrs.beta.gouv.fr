@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 import colors from '@/styles/colors.js'
 
-const Section = ({title, subtitle, background, children, ...props}) => (
+const Section = ({title = null, subtitle = null, background = 'primary', children, ...props}) => (
   <section className={`fr-py-12w ${background}`} {...props}>
     <div className='fr-container'>
       {title && (
@@ -46,12 +46,6 @@ const Section = ({title, subtitle, background, children, ...props}) => (
     `}</style>
   </section>
 )
-
-Section.defaultProps = {
-  title: null,
-  subtitle: null,
-  background: 'primary'
-}
 
 Section.propTypes = {
   title: PropTypes.string,

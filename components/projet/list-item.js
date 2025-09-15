@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import colors from '@/styles/colors.js'
 
-const ListItem = ({title, children}) => {
+const ListItem = ({title, children = null}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleOpen = () => {
@@ -46,10 +46,6 @@ const ListItem = ({title, children}) => {
 ListItem.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node
-}
-
-ListItem.defaultProps = {
-  children: null
 }
 
 export default ListItem

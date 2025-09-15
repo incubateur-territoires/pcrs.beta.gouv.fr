@@ -1,7 +1,22 @@
 import {useEffect} from 'react'
 import PropTypes from 'prop-types'
 
-const TextInput = ({label, value, type, ariaLabel, placeholder, errorMessage, description, isRequired, isDisabled, onValueChange, setIsValueValid, onFocus, onBlur, ...props}) => {
+const TextInput = ({
+  label = '',
+  value = '',
+  type = 'text',
+  ariaLabel = '',
+  placeholder = null,
+  errorMessage = null,
+  description = null,
+  isRequired = false,
+  isDisabled = false,
+  onValueChange = () => {},
+  setIsValueValid = () => {},
+  onFocus = null,
+  onBlur = null,
+  ...props
+}) => {
   const inputState = errorMessage ? 'error' : ''
 
   useEffect(() => {
@@ -86,21 +101,6 @@ TextInput.propTypes = {
   setIsValueValid: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func
-}
-
-TextInput.defaultProps = {
-  label: '',
-  value: '',
-  type: 'text',
-  ariaLabel: '',
-  placeholder: null,
-  errorMessage: null,
-  description: null,
-  isRequired: false,
-  isDisabled: false,
-  onFocus: null,
-  onBlur: null,
-  setIsValueValid() {}
 }
 
 export default TextInput

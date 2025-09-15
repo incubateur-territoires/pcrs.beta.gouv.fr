@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 import colors from '@/styles/colors.js'
 
-const Modal = ({children, title, onClose}) => (
+const Modal = ({children = null, title = null, onClose}) => (
   <div className='modal-wrapper fr-grid-row fr-grid-row--center fr-grid-row--middle' onClick={onClose}>
     <div className='fr-container fr-container--fluid fr-container-md'>
       <div className='fr-grid-row fr-grid-row--center fr-p-3w'>
@@ -50,11 +50,6 @@ Modal.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string,
   onClose: PropTypes.func.isRequired
-}
-
-Modal.defaultProps = {
-  children: null,
-  title: null
 }
 
 export default Modal

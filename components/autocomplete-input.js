@@ -6,19 +6,19 @@ import colors from '@/styles/colors.js'
 import Loader from '@/components/loader.js'
 
 const AutocompleteInput = ({
-  label,
-  value,
-  description,
-  placeholder,
-  ariaLabel,
-  errorMessage,
-  isRequired,
-  isDisabled,
+  label = '',
+  value = '',
+  description = null,
+  placeholder = null,
+  ariaLabel = null,
+  errorMessage = null,
+  isRequired = false,
+  isDisabled = false,
   onInputChange,
   onSelectValue,
   results,
   renderItem,
-  isLoading,
+  isLoading = false,
   ...props
 }) => {
   const inputState = errorMessage ? 'error' : ''
@@ -206,18 +206,6 @@ AutocompleteInput.propTypes = {
   renderItem: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSelectValue: PropTypes.func.isRequired
-}
-
-AutocompleteInput.defaultProps = {
-  label: '',
-  value: '',
-  description: null,
-  placeholder: null,
-  ariaLabel: null,
-  errorMessage: null,
-  isRequired: false,
-  isDisabled: false,
-  isLoading: false
 }
 
 export default AutocompleteInput

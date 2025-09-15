@@ -9,7 +9,14 @@ import Button from '@/components/button.js'
 
 const API_URL = process.env.NEXT_PUBLIC_URL || 'https://pcrs.beta.gouv.fr'
 
-const Header = ({projectId, projectName, resetProjet, territoires, projets, onProjetChange}) => {
+const Header = ({
+  projectId,
+  projectName,
+  resetProjet,
+  territoires = [],
+  projets = null,
+  onProjetChange = null
+}) => {
   const router = useRouter()
   const [isTerritoiresShow, setIsTerritoiresShow] = useState(false)
 
@@ -118,12 +125,6 @@ const Header = ({projectId, projectName, resetProjet, territoires, projets, onPr
       `}</style>
     </div>
   )
-}
-
-Header.defaultProps = {
-  territoires: [],
-  projets: null,
-  onProjetChange: null
 }
 
 Header.propTypes = {

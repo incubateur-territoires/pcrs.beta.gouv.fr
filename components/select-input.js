@@ -1,6 +1,17 @@
 import PropTypes from 'prop-types'
 
-const SelectInput = ({label, value, ariaLabel, options, errorMessage, description, isRequired, isDisabled, onValueChange, ...props}) => {
+const SelectInput = ({
+  label = '',
+  value = '',
+  ariaLabel = '',
+  options,
+  errorMessage = null,
+  description = null,
+  isRequired = false,
+  isDisabled = false,
+  onValueChange,
+  ...props
+}) => {
   const inputState = errorMessage ? 'error' : ''
 
   return (
@@ -58,16 +69,6 @@ SelectInput.propTypes = {
   isRequired: PropTypes.bool,
   onValueChange: PropTypes.func.isRequired,
   isDisabled: PropTypes.bool
-}
-
-SelectInput.defaultProps = {
-  label: '',
-  value: '',
-  ariaLabel: '',
-  errorMessage: null,
-  description: null,
-  isRequired: false,
-  isDisabled: false
 }
 
 export default SelectInput

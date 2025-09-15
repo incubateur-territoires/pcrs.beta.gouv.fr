@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const LabeledWrapper = ({label, children, ...props}) => (
+const LabeledWrapper = ({label, children = null, ...props}) => (
   <div {...props}>
     <div className='label'>{label}</div>
     {children}
@@ -16,10 +16,6 @@ const LabeledWrapper = ({label, children, ...props}) => (
 LabeledWrapper.propTypes = {
   label: PropTypes.string.isRequired,
   children: PropTypes.node
-}
-
-LabeledWrapper.defaultProps = {
-  children: null
 }
 
 export default LabeledWrapper

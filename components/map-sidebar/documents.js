@@ -3,7 +3,7 @@ import Image from 'next/image.js'
 
 import colors from '@/styles/colors.js'
 
-const Documents = ({source, documentation, contract}) => (
+const Documents = ({source = null, documentation = null, contract = null}) => (
   <ul className='nav-wrapper'>
     <li className={source ? '' : 'disable'}>
       <a
@@ -83,12 +83,6 @@ Documents.propTypes = {
   source: PropTypes.string,
   documentation: PropTypes.string,
   contract: PropTypes.string
-}
-
-Documents.defaultProps = {
-  source: null,
-  documentation: null,
-  contract: null
 }
 
 export default Documents

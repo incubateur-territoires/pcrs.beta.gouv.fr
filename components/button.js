@@ -3,7 +3,20 @@ import Link from 'next/link'
 
 import colors from '@/styles/colors.js'
 
-const Button = ({label, size, type, buttonStyle, isDisabled, icon, iconSide, href, isExternal, isWhite, children, ...props}) => {
+const Button = ({
+  label,
+  size = 'md',
+  type = 'button',
+  buttonStyle = null,
+  isDisabled = false,
+  icon = null,
+  iconSide = 'left',
+  href = null,
+  isExternal = false,
+  isWhite = false,
+  children = null,
+  ...props
+}) => {
   if (href) {
     return (
       <>
@@ -119,19 +132,6 @@ Button.propTypes = {
   isExternal: PropTypes.bool,
   isWhite: PropTypes.bool,
   children: PropTypes.node
-}
-
-Button.defaultProps = {
-  buttonStyle: null,
-  size: 'md',
-  type: 'button',
-  isDisabled: false,
-  iconSide: 'left',
-  icon: null,
-  href: null,
-  isWhite: false,
-  isExternal: false,
-  children: null
 }
 
 export default Button

@@ -91,7 +91,15 @@ const initState = ({initialValues, fieldsValidations}) => {
   return {fields, isFormValid: checkFormValidity(fields)}
 }
 
-const LivrableForm = ({initialValues, isLivrableNameAvailable, onCancel, onSubmit}) => {
+const LivrableForm = ({
+  initialValues = {
+    stockage: null,
+    stockage_params: {}
+  },
+  isLivrableNameAvailable,
+  onCancel = null,
+  onSubmit
+}) => {
   const [form, dispatch] = useReducer(formReducer, initState({initialValues, fieldsValidations: {nom: isLivrableNameAvailable}}))
 
   const [isStockageFormOpen, setIsStockageFormOpen] = useState(false)
@@ -429,10 +437,6 @@ LivrableForm.propTypes = {
   isLivrableNameAvailable: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   onSubmit: PropTypes.func.isRequired
-}
-
-LivrableForm.defaultProps = {
-  initialValues: {stockage: null, stockage_params: {}}
 }
 
 export default LivrableForm

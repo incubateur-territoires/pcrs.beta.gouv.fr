@@ -20,7 +20,7 @@ const trimObjectValues = obj => {
   return result
 }
 
-const StockageForm = ({initialValues, handleLivrableStockage, onCancel}) => {
+const StockageForm = ({initialValues = {}, handleLivrableStockage, onCancel}) => {
   const [validationMessage, setValidationMessage] = useState(null)
   const [isSubmitable, setIsSubmitable] = useState(false)
   const [stockageType, setStockageType] = useState(initialValues?.stockage || undefined)
@@ -148,10 +148,6 @@ StockageForm.propTypes = {
   initialValues: PropTypes.object,
   handleLivrableStockage: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired
-}
-
-StockageForm.defaultProps = {
-  initialValues: {}
 }
 
 export default StockageForm

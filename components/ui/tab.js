@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types'
 
-const Tab = ({activeTab, tabs, icon, children, handleActiveTab}) => (
+const Tab = ({
+  activeTab = null,
+  tabs,
+  icon = null,
+  children = null,
+  handleActiveTab
+}) => (
   <div>
     <div className='fr-tabs'>
       <ul className='fr-tabs__list' role='tablist'>
@@ -48,12 +54,6 @@ Tab.propTypes = {
   })).isRequired,
   handleActiveTab: PropTypes.func.isRequired,
   children: PropTypes.node
-}
-
-Tab.defaultProps = {
-  activeTab: null,
-  icon: null,
-  children: null
 }
 
 export default Tab

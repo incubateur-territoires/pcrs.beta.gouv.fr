@@ -1,6 +1,16 @@
 import PropTypes from 'prop-types'
 
-const DateInput = ({label, value, ariaLabel, errorMessage, description, isRequired, isDisabled, onValueChange, ...props}) => {
+const DateInput = ({
+  label = '',
+  value = '',
+  ariaLabel = '',
+  errorMessage = null,
+  description = null,
+  isRequired = false,
+  isDisabled = false,
+  onValueChange,
+  ...props
+}) => {
   const inputState = errorMessage ? 'error' : ''
 
   return (
@@ -35,16 +45,6 @@ DateInput.propTypes = {
   isRequired: PropTypes.bool,
   isDisabled: PropTypes.bool,
   onValueChange: PropTypes.func.isRequired
-}
-
-DateInput.defaultProps = {
-  label: '',
-  value: '',
-  ariaLabel: '',
-  errorMessage: null,
-  description: null,
-  isRequired: false,
-  isDisabled: false
 }
 
 export default DateInput
