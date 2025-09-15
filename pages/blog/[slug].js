@@ -22,6 +22,7 @@ const BlogPost = ({post}) => {
           src={feature_image || '/images/illustrations/blog_fallback.svg'}
           height={30}
           width={1000}
+          legacyBehavior
           className='blog-feature-image'
           style={{
             width: '100%',

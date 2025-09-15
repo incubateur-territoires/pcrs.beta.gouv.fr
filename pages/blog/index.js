@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import {getStaticPosts, getTags} from '@/lib/blog-static.js'
 

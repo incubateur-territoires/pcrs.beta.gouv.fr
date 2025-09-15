@@ -1,7 +1,7 @@
 import {useEffect, useState, useContext} from 'react'
 import PropTypes from 'prop-types'
 import {useRouter} from 'next/router'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import {getProject} from '@/lib/suivi-pcrs.js'
 

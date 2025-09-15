@@ -7,7 +7,13 @@ import Perimetre from '@/components/suivi-form/perimetres/perimetre.js'
 import PerimetreForm from '@/components/suivi-form/perimetres/perimetre-form.js'
 import Button from '@/components/button.js'
 
-const Perimetres = ({perimetres, hasMissingData, handlePerimetres, projetPerimetreMillesime, setMillesime}) => {
+const Perimetres = ({
+  perimetres,
+  hasMissingData = false,
+  handlePerimetres,
+  projetPerimetreMillesime = null,
+  setMillesime = () => {}
+}) => {
   const hasPerimetres = perimetres.length > 0
   const [perimetre, setPerimetre] = useState(hasPerimetres ? null : {})
   const MILLESIME = process.env.NEXT_PUBLIC_MILLESIME
@@ -99,9 +105,4 @@ Perimetres.propTypes = {
   setMillesime: PropTypes.func
 }
 
-Perimetres.defaultProps = {
-  hasMissingData: false,
-  projetPerimetreMillesime: null,
-  setMillesime() {}
-}
 export default Perimetres

@@ -1,9 +1,18 @@
 import PropTypes from 'prop-types'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import colors from '@/styles/colors.js'
 
-const SectionImage = ({title, subtitle, background, imageLink, imageSide, panelBottom, children, ...props}) => (
+const SectionImage = ({
+  title = null,
+  subtitle = null,
+  background = 'primary',
+  imageLink,
+  imageSide = 'left',
+  panelBottom = null,
+  children = null,
+  ...props
+}) => (
   <section className={`fr-py-12w ${background}`} {...props}>
     <div className={`content-wrapper ${imageLink ? 'illustrated' : ''}`}>
       <div className='illustration fr-m-auto'>
@@ -112,15 +121,6 @@ SectionImage.propTypes = {
   ]),
   children: PropTypes.node,
   panelBottom: PropTypes.node
-}
-
-SectionImage.defaultProps = {
-  title: null,
-  subtitle: null,
-  children: null,
-  panelBottom: null,
-  background: 'primary',
-  imageSide: 'left'
 }
 
 export default SectionImage

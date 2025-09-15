@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Image from 'next/image.js'
+import Image from 'next/legacy/image.js'
 
 import colors from '@/styles/colors.js'
 
