@@ -15,7 +15,7 @@ import Button from '@/components/button.js'
 import CenteredSpinner from '@/components/centered-spinner.js'
 import ProjetInfos from '@/components/projet/index.js'
 
-const Projet = ({id}) => {
+const Projet = ({id = null}) => {
   const router = useRouter()
   const {token} = useContext(AuthentificationContext)
 
@@ -120,10 +120,6 @@ export async function getServerSideProps(context) {
 
 Projet.propTypes = {
   id: PropTypes.string
-}
-
-Projet.defaultProps = {
-  id: null
 }
 
 export default Projet

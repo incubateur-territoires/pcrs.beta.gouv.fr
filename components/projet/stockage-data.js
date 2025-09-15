@@ -7,7 +7,7 @@ import {STOCKAGE_PARAMS} from '@/lib/utils/projet.js'
 
 import Badge from '@/components/badge.js'
 
-const StockageData = ({isPublic, type, params}) => (
+const StockageData = ({isPublic = false, type, params = {}}) => (
   <div className='fr-mt-3w'>
     <div className='fr-grid-row fr-grid-row--middle'>
       <span className='fr-icon-server-fill fr-mr-1w' aria-hidden='true' />
@@ -61,10 +61,6 @@ StockageData.propTypes = {
   type: PropTypes.string.isRequired,
   params: PropTypes.object,
   isPublic: PropTypes.bool
-}
-
-StockageData.defaultProps = {
-  isPublic: false
 }
 
 export default StockageData

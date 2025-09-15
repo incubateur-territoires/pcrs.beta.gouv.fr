@@ -66,7 +66,7 @@ const LivrablesSection = ({projectId, livrables}) => {
 }
 
 LivrablesSection.propTypes = {
-  projectId: PropTypes.string,
+  projectId: PropTypes.string.isRequired,
   livrables: PropTypes.array.isRequired
 }
 
